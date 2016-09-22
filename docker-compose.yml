@@ -2,6 +2,12 @@ data:
   build: ./data
   volumes:
     - ./app:/var/www/app
+    - /var/www/app/app/cache
+    - /var/www/app/app/logs
+    - /var/www/app/vendor
+    - /var/www/app/.git
+    - /var/www/app/.idea
+    - /var/www/app/bin
 nginx:
   build: ./nginx
   ports:

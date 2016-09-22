@@ -1,13 +1,13 @@
 ##Docker environment for OroCRM/OroBAP Windows development
 
-To run containers execute following command:
+To run (and build if not built yet) containers execute following command:
 ```bash
 tools\start
 ```
 
-To SSH to php container:
+To run bash in php container:
 ```bash
-tools\ssh
+tools\bash
 ```
 
 To stop all containers:
@@ -20,25 +20,18 @@ To restart all containers:
 tools\restart
 ```
 
+To update an run containers:
+```bash
+tools\update
+```
+
 To rebuild an run containers:
 ```bash
 tools\build
 ```
 ##Speed up Symfony app working in container
 
-To speed up your app you'll need to change cache, logs and vendor dirs locations:
-
-app/autoload.php:
-```php
-$loader = require '/var/app/vendor/autoload.php'; 
-```
-
-composer.json:
-```yaml
-"config": {
-        "vendor-dir": "/var/app/vendor"
-    },
-```
+To speed up your app you'll need to change cache and logs dirs locations:
 
 app/AppKernel.php:
 ```php
