@@ -10,9 +10,7 @@ Scripts to control docker:
 
 ##Speed up Symfony app working in container
 
-To speed up your app you'll need to change cache and logs dirs locations:
-
-app/AppKernel.php:
+To speed up your app you'll need to change cache and logs dirs locations. Add following methods to app/AppKernel.php:
 ```php
 public function getCacheDir()
 {
