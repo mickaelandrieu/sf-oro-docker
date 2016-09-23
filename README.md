@@ -49,6 +49,16 @@ You can use these scripts instead of standard docker commands, just for simplici
 - docker\update - update and run containers
 - docker\build - build/rebuild and run containers (even already running)
 
+##Tips and useful PhpStorm plugins
+
+Here are some tips from me to bring more fun to development process
+
+### PhpStorm plugins
+
+- [Symfony Plugin](https://plugins.jetbrains.com/plugin/7219)
+- [Oro PHPStorm Plugin](https://plugins.jetbrains.com/plugin/8449?pr=idea)
+- [String Manipulation](https://plugins.jetbrains.com/plugin/2162?pr=idea)
+
 ###Speed up Symfony app working in container
 
 To speed up your app you'll need to change cache and logs dirs locations. Add following methods to app/AppKernel.php:
@@ -63,16 +73,6 @@ public function getLogDir()
     return '/var/app/logs';
 }
 ```
-
-##Tips and useful PhpStorm plugins
-
-Here are some tips from me to bring more fun to development process
-
-### PhpStorm plugins
-
-- [Symfony Plugin](https://plugins.jetbrains.com/plugin/7219)
-- [Oro PHPStorm Plugin](https://plugins.jetbrains.com/plugin/8449?pr=idea)
-- [String Manipulation](https://plugins.jetbrains.com/plugin/2162?pr=idea)
 
 ### ConEmu shortcut
 `"C:\Program Files\ConEmu\ConEmu64.exe" -Max -Monitor 2 -runlist {Shells::cmd} & docker stats ||| {Shells::cmd} -new_console:s75V`
