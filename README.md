@@ -4,7 +4,7 @@ Docker containers configuration for Symfony2/OroCRM/OroBAP development on Window
 
 This repo is under MIT license. Feel free to do with it whatever you want.
 
-####Contents
+###Contents
 
 Containers:
 - nginx (latest nginx, configured to run app in dev mode)
@@ -19,7 +19,7 @@ Also there are several batch scripts to simplify docker manipulations with these
 Application should be stored in "app" folder. This is shared folder that mounts to "/var/www/app" directory in "data" container.
 This directory also shared with "php" and "nginx" containers.
 
-####Step by step manual:
+###Step by step manual:
 1. Install [Docker for Windows](https://www.docker.com/products/docker#/windows) and share the local disk where your project will be located in Docker setings
 2. Clone this repo
 3. Place your application in "app" folder (via git clone for example)
@@ -31,7 +31,7 @@ This directory also shared with "php" and "nginx" containers.
 9. Provide database and other parameters using your favourite IDE on host machine
 10. Open your browser and go to http://localhost
 
-####Important
+###Important
 Following directories excluded from sync to speed up Symfony application in container and prevent permission issues:
 - app/cache
 - app/logs
@@ -40,7 +40,7 @@ Following directories excluded from sync to speed up Symfony application in cont
 
 So feel free to empty these dirs on your host machine
 
-####Scripts to control docker
+###Scripts to control docker
 You can use these scripts instead of standard docker commands, just for simplicity:
 - docker\start - run (and build if not built yet) containers
 - docker\bash - run bash in php container
@@ -49,7 +49,7 @@ You can use these scripts instead of standard docker commands, just for simplici
 - docker\update - update and run containers
 - docker\build - build/rebuild and run containers (even already running)
 
-####Speed up Symfony app working in container
+###Speed up Symfony app working in container
 
 To speed up your app you'll need to change cache and logs dirs locations. Add following methods to app/AppKernel.php:
 ```php
