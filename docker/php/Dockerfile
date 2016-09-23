@@ -36,12 +36,10 @@ RUN docker-php-ext-install \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-#RUN docker-php-ext-install pdo pdo_mysql
-
 ADD ./php.ini /usr/local/etc/php/
 COPY php-fpm.conf /etc/php-fpm.conf
 
 RUN useradd -ms /bin/bash nginx
-USER nginx
+RUN usermod -aG sudo nginx
 
-#WORKDIR /var/www/app
+USER nginx

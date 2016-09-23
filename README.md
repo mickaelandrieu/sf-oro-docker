@@ -1,12 +1,12 @@
-##Docker environment for OroCRM/OroBAP Windows development
+##Docker environment for Symfony2/OroCRM/OroBAP Windows development
 
 Scripts to control docker:
-- tools\start - run (and build if not built yet) containers
-- tools\bash - run bash in php container
-- tools\stop - stop all containers
-- tools\restart - restart all containers
-- tools\update - update and run containers
-- tools\build - build/rebuild and run containers (even running)
+- docker\start - run (and build if not built yet) containers
+- docker\bash - run bash in php container
+- docker\stop - stop all containers
+- docker\restart - restart all containers
+- docker\update - update and run containers
+- docker\build - build/rebuild and run containers (even running)
 
 ##Speed up Symfony app working in container
 

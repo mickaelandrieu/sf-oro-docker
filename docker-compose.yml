@@ -1,5 +1,5 @@
 data:
-  build: ./data
+  build: ./docker/data
   volumes:
     - ./app:/var/www/app
     - /var/www/app/app/cache
@@ -9,7 +9,7 @@ data:
     - /var/www/app/.idea
     - /var/www/app/bin
 nginx:
-  build: ./nginx
+  build: ./docker/nginx
   ports:
    - "80:80"
   links:
@@ -18,7 +18,7 @@ nginx:
     - php
     - data
 php:
-  build: ./php
+  build: ./docker/php
   links:
    - mysql:db
   volumes_from:
