@@ -20,18 +20,19 @@ Application should be stored in "app" folder. This is shared folder that mounts 
 This directory also shared with "php" and "nginx" containers.
 
 ###Step by step manual:
+
 1. Install [Docker for Windows](https://www.docker.com/products/docker#/windows) and share the local disk where your project will be located in Docker setings
 2. Clone this repo
 3. Place your application in "app" folder (via `git clone` for example)
-4. Tweak your Symfony app using [directions below](#speed-up-symfony-app-working-in-container)
-5. Run `docker\start` to build and run containers
-6. Run bash in "php" container by executing `docker\bash` command
-7. `cd` to "/var/www/app" directory
-8. Install all the dependencies via Composer
-9. Provide database and other parameters using your favourite IDE on host machine
-10. Open your browser and go to http://localhost
+4. Run `docker\start` to build and run containers
+5. Run bash in "php" container by executing `docker\bash` command
+6. `cd` to "/var/www/app" directory
+7. Install all the dependencies via Composer
+8. Provide database and other parameters using your favourite IDE on host machine
+9. Open your browser and go to http://localhost
 
 ###Important
+
 Following directories excluded from sync to speed up Symfony application in container and prevent permission issues:
 - app/cache
 - app/logs
@@ -39,8 +40,12 @@ Following directories excluded from sync to speed up Symfony application in cont
 - bin
 
 So feel free to empty these dirs on your host machine
+They are excluded via new shared volume for each of them (see docker-compose.yml), so these dirs cannot be move/removed/overwritten inside the containers.
+
+If you need the "vendor" dir on your host machine (for development) - you can copy it to "shared" folder via `cp -r /var/www/app/vendor /shared/vendor` and then extract synced "vendor.tar.gz" dir to "app/vendor" directory
 
 ###Scripts to control docker
+
 You can use these scripts instead of standard docker commands, just for simplicity:
 - docker\start - run (and build if not built yet) containers
 - docker\bash - run bash in php container
@@ -59,24 +64,10 @@ Here are some tips from me to bring more fun to development process
 - [Oro PHPStorm Plugin](https://plugins.jetbrains.com/plugin/8449?pr=idea)
 - [String Manipulation](https://plugins.jetbrains.com/plugin/2162?pr=idea)
 
-###Speed up Symfony app working in container
-
-To speed up your app you'll need to change cache and logs dirs locations. Add following methods to app/AppKernel.php:
-```php
-public function getCacheDir()
-{
-    return '/var/app/cache/'.$this->getEnvironment();
-}
-
-public function getLogDir()
-{
-    return '/var/app/logs';
-}
-```
-
 ### ConEmu shortcut
+
 `"C:\Program Files\ConEmu\ConEmu64.exe" -Max -Monitor 2 -runlist {Shells::cmd} & docker stats ||| {Shells::cmd} -new_console:s75V`
 
 This shortcut will run ConEmu on second monitor with two vertically splitted consoles.
-Upper console will display docker stats for running container, lower one will run cmd as usual.
+Upper console will display docker stats for running containers, lower one will run cmd as usual.
 Just provide the correct path to ConEmu
