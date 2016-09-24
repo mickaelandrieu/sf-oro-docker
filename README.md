@@ -42,7 +42,7 @@ Following directories excluded from sync to speed up Symfony application in cont
 So feel free to empty these dirs on your host machine
 They are excluded via new shared volume for each of them (see docker-compose.yml), so these dirs cannot be move/removed/overwritten inside the containers.
 
-If you need the "vendor" dir on your host machine (for development) - you can copy it to "shared" folder via `cp -r /var/www/app/vendor /shared/vendor` and then extract synced "vendor.tar.gz" dir to "app/vendor" directory
+If you need the "vendor" dir on your host machine (for development) - you can comporess it to "shared" folder via `tar -zcf /shared/vendor.tar.gz -C /var/www/app/ vendor` and then extract synced "vendor.tar.gz" dir to "app/vendor" directory
 
 ###Scripts to control docker
 
