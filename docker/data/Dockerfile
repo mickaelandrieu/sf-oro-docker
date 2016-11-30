@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Stepan Yudin <stepan.sib@gmail.com>
 
-ENV REFRESHED_AT 2016–09-22
+ENV REFRESHED_AT 2016–11-30
 
 # Create Symfony dirs to set em writable
 RUN mkdir -p /var/www/app/vendor
