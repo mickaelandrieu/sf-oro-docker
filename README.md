@@ -65,6 +65,7 @@ Here are some tips from me to bring more fun to development process
 - [Symfony Plugin](https://plugins.jetbrains.com/plugin/7219)
 - [Oro PHPStorm Plugin](https://plugins.jetbrains.com/plugin/8449?pr=idea)
 - [String Manipulation](https://plugins.jetbrains.com/plugin/2162?pr=idea)
+- [PHP Annotations](https://plugins.jetbrains.com/plugin/7320)
 
 ### ConEmu shortcut
 
