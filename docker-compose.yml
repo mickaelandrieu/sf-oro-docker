@@ -3,10 +3,11 @@ data:
   volumes:
     - ./shared:/shared
     - ./app:/var/www/app
-    - /var/www/app/app/cache
-    - /var/www/app/app/logs
     - /var/www/app/vendor
     - /var/www/app/bin
+    - /var/www/app/app/cache
+    - /var/www/app/app/logs
+
 nginx:
   build: ./docker/nginx
   ports:
@@ -15,12 +16,14 @@ nginx:
    - php
   volumes_from:
     - data
+
 php:
   build: ./docker/php
   links:
    - mysql:db
   volumes_from:
     - data
+
 mysql:
   image: mysql:5.6
   ports:
