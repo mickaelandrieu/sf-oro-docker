@@ -69,8 +69,8 @@ Here are some tips from me to bring more fun to development process
 
 ### ConEmu shortcut
 
-`"C:\Program Files\ConEmu\ConEmu64.exe" -Max -Monitor 2 -runlist {Shells::cmd} & docker stats ||| {Shells::cmd} -new_console:s75V`
+`"C:\Program Files\ConEmu\ConEmu64.exe" -Max -Monitor 2 -runlist {Shells::cmd} & docker stats ||| {Shells::cmd} -new_console:d:"c:\projects\app":s75V`
 
 This shortcut will run ConEmu on second monitor with two vertically splitted consoles.
-Upper console will display docker stats for running containers, lower one will run cmd as usual.
-Just provide the correct path to ConEmu
+Upper console will display docker stats for running containers, lower one will run cmd in specified folder as usual.
+Just provide the correct path to ConEmu and workdir
