@@ -10,6 +10,7 @@ Containers:
 - nginx (latest nginx, configured to run app in dev mode)
 - php (inside: php5.6-fpm, composer, git, all modules, libs and config that required by Symfony2/OroCRM/OroBAP)
 - mysql (5.6, hostname: "db", root password: "rootpassword", database: "app", user: "app", user password: "apppassword")
+- rabbitmq (latest, hostname:"rabbitmq", access management UI via http://localhost:15672, user: "rabbitmq", passowrd: "rabbitmq")
 - data (syncs "app" directory between containers)
 
 Also there are several batch scripts ([see full list](#scripts-to-control-docker)) to simplify docker manipulations with these containers
