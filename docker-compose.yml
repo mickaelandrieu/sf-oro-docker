@@ -20,7 +20,7 @@ nginx:
 php:
   build: ./docker/php
   links:
-   - mysql:db
+   - mysql:mysqldb
    - rabbitmq
   volumes_from:
    - data
@@ -30,17 +30,17 @@ mysql:
   ports:
     - "3306:3306"
   environment:
-    MYSQL_ROOT_PASSWORD: rootpassword
-    MYSQL_USER: app
-    MYSQL_PASSWORD: apppassword
+    MYSQL_ROOT_PASSWORD: qazwsxedc
     MYSQL_DATABASE: app
+    MYSQL_USER: app
+    MYSQL_PASSWORD: qazwsxedc
 
 rabbitmq:
   image: "rabbitmq:management"
   environment:
     RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
-    RABBITMQ_DEFAULT_USER: "rabbitmq"
-    RABBITMQ_DEFAULT_PASS: "rabbitmq"
+    RABBITMQ_DEFAULT_USER: "app"
+    RABBITMQ_DEFAULT_PASS: "qazwsxedc"
     RABBITMQ_DEFAULT_VHOST: "/"
   ports:
     - "15672:15672"
