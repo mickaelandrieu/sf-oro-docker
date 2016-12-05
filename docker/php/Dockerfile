@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
   libldap2-dev \
   libxml2-dev \
   libcurl4-openssl-dev \
+  libtidy-dev \
   zip \
   unzip \
   wget \
@@ -38,6 +39,7 @@ RUN docker-php-ext-install \
   pdo_mysql \
   soap \
   zip \
+  tidy \
   bcmath
 
 # Install Composer
