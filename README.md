@@ -8,7 +8,7 @@ This repo is under MIT license. Feel free to do with it whatever you want.
 
 Containers:
 - nginx (latest nginx, configured to run app in dev mode)
-- php (inside: php5.6-fpm, composer, git, all modules, libs and config that required by Symfony2/OroCRM/OroBAP)
+- php (inside: php7.0-fpm/php5.6-fpm, composer, git, all modules, libs and config that required by Symfony2/OroCRM/OroBAP)
 - mysql (5.6, hostname: "mysqldb", root password: "qazwsxedc", database: "app", user: "app", user password: "qazwsxedc")
 - rabbitmq (latest, hostname:"rabbitmq", access management UI via http://localhost:15672, user: "app", passowrd: "qazwsxedc")
 - data (syncs "app" directory between containers)
