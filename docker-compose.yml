@@ -1,7 +1,6 @@
 data:
   build: ./docker/data
   volumes:
-    - ./shared:/shared
     - ./app:/var/www/app
     - /var/www/app/vendor
     - /var/www/app/bin
