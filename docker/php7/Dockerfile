@@ -1,7 +1,7 @@
 FROM php:7.0-fpm
 MAINTAINER Stepan Yudin <stepan.sib@gmail.com>
 
-ENV REFRESHED_AT 2016–09-22
+ENV REFRESHED_AT 2017–01-26
 
 # Install libs
 RUN apt-get update && apt-get install -y \
@@ -70,4 +70,5 @@ COPY php-fpm.conf /etc/php-fpm.conf
 RUN useradd -ms /bin/bash nginx
 RUN usermod -aG sudo nginx
 
+WORKDIR "/var/www/app"
 USER nginx
