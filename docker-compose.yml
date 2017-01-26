@@ -44,3 +44,14 @@ rabbitmq:
   ports:
     - "15672:15672"
     - "5672:5672"
+
+elk:
+  image: willdurand/elk
+  ports:
+    - "81:80"
+  volumes:
+    - ./docker/logstash:/etc/logstash
+    - ./docker/logstash/patterns:/opt/logstash/patterns
+  volumes_from:
+    - php
+    - nginx
