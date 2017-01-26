@@ -11,6 +11,7 @@ Containers:
 - php (inside: php7.0-fpm/php5.6-fpm, composer, git, all modules, libs and config that required by Symfony2/OroCRM/OroBAP)
 - mysql (5.6, hostname: "mysqldb", root password: "qazwsxedc", database: "app", user: "app", user password: "qazwsxedc")
 - rabbitmq (latest, hostname:"rabbitmq", access management UI via http://localhost:15672, user: "app", passowrd: "qazwsxedc")
+- elk (ELK stack container, Kibana available at http://localhost:81)
 - data (syncs "app" directory between containers)
 
 Also there are several batch scripts ([see full list](#scripts-to-control-docker)) to simplify docker manipulations with these containers
