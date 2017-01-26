@@ -12,7 +12,7 @@ Containers:
 - mysql (5.6, hostname: "mysqldb", root password: "qazwsxedc", database: "app", user: "app", user password: "qazwsxedc")
 - rabbitmq (latest, hostname:"rabbitmq", access management UI via http://localhost:15672, user: "app", passowrd: "qazwsxedc")
 - elk (ELK stack container, Kibana available at http://localhost:81)
-- data (syncs "app" directory between containers)
+- data (syncs application between containers)
 
 Also there are several batch scripts ([see full list](#scripts-to-control-docker)) to simplify docker manipulations with these containers
 
@@ -64,9 +64,10 @@ Here are some tips from me to bring more fun to development process
 ### PhpStorm plugins
 
 - [Symfony Plugin](https://plugins.jetbrains.com/plugin/7219)
-- [Oro PHPStorm Plugin](https://plugins.jetbrains.com/plugin/8449?pr=idea)
-- [String Manipulation](https://plugins.jetbrains.com/plugin/2162?pr=idea)
+- [Oro PHPStorm Plugin](https://plugins.jetbrains.com/plugin/8449)
+- [String Manipulation](https://plugins.jetbrains.com/plugin/2162)
 - [PHP Annotations](https://plugins.jetbrains.com/plugin/7320)
+- [PHP Toolbox](https://plugins.jetbrains.com/idea/plugin/8133)
 
 ### ConEmu shortcut
 
