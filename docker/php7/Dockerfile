@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs \
   build-essential
+RUN chown -R nginx /usr/local
 
 # Configure PHP extensions
 RUN docker-php-ext-configure intl
