@@ -18,8 +18,11 @@ RUN apt-get update && apt-get install -y \
   zip \
   unzip \
   wget \
-  git \
-  nodejs \
+  git
+
+# Install fresh node & npm
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install -y nodejs \
   build-essential
 
 # Configure PHP extensions
@@ -44,6 +47,9 @@ RUN docker-php-ext-install \
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Install Webpack
+RUN npm install -g webpack
 
 # Install, enable and configure xdebug
 #RUN pecl install xdebug
