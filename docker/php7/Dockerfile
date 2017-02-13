@@ -1,7 +1,12 @@
 FROM php:7.0-fpm
 MAINTAINER Stepan Yudin <stepan.sib@gmail.com>
 
-ENV REFRESHED_AT 2017–01-26
+ENV REFRESHED_AT 2017–02-13
+
+# Create nginx user and set permissions
+RUN useradd -ms /bin/bash nginx
+RUN usermod -aG sudo nginx
+RUN chown -R nginx /usr/local
 
 # Install libs
 RUN apt-get update && apt-get install -y \
@@ -24,7 +29,6 @@ RUN apt-get update && apt-get install -y \
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y nodejs \
   build-essential
-RUN chown -R nginx /usr/local
 
 # Configure PHP extensions
 RUN docker-php-ext-configure intl
@@ -52,6 +56,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Install Webpack
 RUN npm install -g webpack
 
+# Install Vue Cli
+RUN npm install -g vue-cli
+
 # Install, enable and configure xdebug
 #RUN pecl install xdebug
 #RUN docker-php-ext-enable xdebug
@@ -73,9 +80,5 @@ RUN chmod a+x /usr/local/bin/symfony
 ADD ./php.ini /usr/local/etc/php/
 COPY php-fpm.conf /etc/php-fpm.conf
 
-# Create nginx user
-RUN useradd -ms /bin/bash nginx
-RUN usermod -aG sudo nginx
-
-WORKDIR "/var/www/app"
+WORKDIR "/var/www/backend"
 USER nginx

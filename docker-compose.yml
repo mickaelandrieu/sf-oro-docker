@@ -1,28 +1,32 @@
 data:
   build: ./docker/data
   volumes:
-    - ./app:/var/www/app
-    - /var/www/app/vendor
-    - /var/www/app/bin
-    - /var/www/app/app/cache
-    - /var/www/app/app/logs
+    - ./frontend:/var/www/frontend
+    - /var/www/frontend/node_modules
+    - ./backend:/var/www/backend
+    - /var/www/backend/vendor
+    - /var/www/backend/bin
+    - /var/www/backend/app/cache
+    - /var/www/backend/app/logs
 
 nginx:
   build: ./docker/nginx
   ports:
    - "80:80"
   links:
-   - php
+   - app
   volumes_from:
    - data
 
-php:
+app:
   build: ./docker/php7
   links:
    - mysql:mysqldb
    - rabbitmq
   volumes_from:
-   - data
+    - data
+  ports:
+    - "81:8080"
 
 mysql:
   image: mysql:5.6
@@ -48,10 +52,10 @@ rabbitmq:
 elk:
   image: willdurand/elk
   ports:
-    - "81:80"
+    - "82:80"
   volumes:
     - ./docker/logstash:/etc/logstash
     - ./docker/logstash/patterns:/opt/logstash/patterns
   volumes_from:
-    - php
+    - app
     - nginx
