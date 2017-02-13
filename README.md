@@ -2,7 +2,7 @@
 
 Docker containers configuration for Symfony2/OroCRM/OroBAP development on Windows platform.
 
-Also it can be used for separated backend and frontend applications (see Vue.js example in [Step by step manual](#step_by_step_manual))
+Also it can be used for separated backend and frontend applications (see Vue.js example in [Step by step manual](#step-by-step-manual))
 
 This repo is under MIT license. Feel free to do with it whatever you want.
 
