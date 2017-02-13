@@ -22,12 +22,12 @@ VOLUME /var/www/backend/app/cache
 VOLUME /var/www/backend/app/logs
 
 # Create node dirs to set em writable
-#RUN mkdir -p /var/www/frontend/node_modules
+RUN mkdir -p /var/www/frontend/node_modules
 
 # Set node dirs writable
-#RUN chmod -R 777 /var/www/frontend/node_modules
+RUN chmod -R 777 /var/www/frontend/node_modules
 
 # Expose node dirs
-#VOLUME /var/www/frontend/node_modules
+VOLUME /var/www/frontend/node_modules
 
 CMD ["/usr/bin/tail","-f","/dev/null"]
