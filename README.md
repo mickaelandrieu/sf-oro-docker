@@ -10,7 +10,7 @@ This repo is under MIT license. Feel free to do with it whatever you want.
 
 Containers:
 - nginx (latest nginx, configured to run app in dev mode)
-- app (inside: php7.0-fpm/php5.6-fpm, nodejs 6, composer, symfony installer, git, webpack, vue-cli all modules, libs and config that required by Symfony2/OroCRM/OroBAP)
+- app (inside: php7.0-fpm/php5.6-fpm, nodejs 6, composer, symfony installer, bower, git, webpack, vue-cli all modules, libs and config that required by Symfony2/OroCRM/OroBAP)
 - mysql (5.6, hostname: "mysqldb", root password: "qazwsxedc", database: "app", user: "app", user password: "qazwsxedc")
 - rabbitmq (latest, hostname:"rabbitmq", access management UI via http://localhost:15672, user: "app", passowrd: "qazwsxedc")
 - elk (ELK stack container, Kibana available at http://localhost:82)
