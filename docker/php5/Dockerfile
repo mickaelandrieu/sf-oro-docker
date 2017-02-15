@@ -56,6 +56,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Install Webpack
 RUN npm install -g webpack
 
+# Install Bower
+RUN npm install -g bower
+
 # Install Vue Cli
 RUN npm install -g vue-cli
 
