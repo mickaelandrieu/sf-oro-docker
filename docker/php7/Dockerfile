@@ -85,5 +85,12 @@ RUN chmod a+x /usr/local/bin/symfony
 ADD ./php.ini /usr/local/etc/php/
 COPY php-fpm.conf /etc/php-fpm.conf
 
+# Add cacert.pem
+RUN curl --remote-name --time-cond cacert.pem https://curl.haxx.se/ca/cacert.pem
+COPY cacert.pem /etc/ssl/certs/cacert.pem
+RUN mv cacert.pem /usr/lib/ssl/certs/
+ADD ./php.ini /usr/local/etc/php/
+RUN update-ca-certificates
+
 WORKDIR "/var/www/backend"
 USER nginx
