@@ -1,4 +1,4 @@
-##Docker environment for Symfony2/OroCRM/OroBAP/Vue.js development on Windows platform
+## Docker environment for Symfony2/OroCRM/OroBAP/Vue.js development on Windows platform
 
 Docker containers configuration for Symfony2/OroCRM/OroBAP development on Windows platform.
 
@@ -6,7 +6,7 @@ Also it can be used for separated backend and frontend applications (see Vue.js 
 
 This repo is under MIT license. Feel free to do with it whatever you want.
 
-###Contents
+### Contents
 
 Containers:
 - nginx (latest nginx, configured to run app in dev mode)
@@ -18,12 +18,12 @@ Containers:
 
 Also there are several batch scripts ([see full list](#scripts-to-control-docker)) to simplify docker manipulations with these containers
 
-##Installation and usage
+## Installation and usage
 
 Symfony (backend) application should be stored in "app" folder. This is shared folder that mounts to `/var/www/backend` directory in "data" container.
 This directory (and `/var/www/frontend` frontend directory) also shared with "app" and "nginx" containers.
 
-###Step by step manual:
+### Step by step manual:
 
 #### Backend app
 1. Install [Docker for Windows](https://www.docker.com/products/docker#/windows) and share the local disk where your project will be located in Docker setings
@@ -60,7 +60,7 @@ See this [article](http://andrewhfarmer.com/webpack-watch-in-vagrant-docker/) fo
 8. Run `npm run dev`
 7. Open your browser and go to `http://localhost:81` to access frontend app
 
-###Important
+### Important
 
 Following directories excluded from sync to speed up Symfony application in container and prevent permission issues:
 - app/cache
@@ -75,7 +75,7 @@ They are excluded via new shared volume for each of them (see docker-compose.yml
 
 If you need the "vendor" dir on your host machine (for development) - you can compress it to "shared" folder via `tar -zcf /shared/vendor.tar.gz -C /var/www/app/ vendor` and then extract synced "vendor.tar.gz" dir to "app/vendor" directory
 
-###Scripts to control docker
+### Scripts to control docker
 
 You can use these scripts instead of standard docker commands, just for simplicity:
 - docker\start - run (and build if not built yet) containers
@@ -85,7 +85,7 @@ You can use these scripts instead of standard docker commands, just for simplici
 - docker\update - update and run containers
 - docker\build - build/rebuild and run containers (even already running)
 
-##Tips and useful PhpStorm plugins
+## Tips and useful PhpStorm plugins
 
 Here are some tips from me to bring more fun to development process
 
