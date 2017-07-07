@@ -20,7 +20,7 @@ Also there are several batch scripts ([see full list](#scripts-to-control-docker
 
 ## Installation and usage
 
-Symfony (backend) application should be stored in "app" folder. This is shared folder that mounts to `/var/www/backend` directory in "data" container.
+Symfony (backend) application should be stored in "backend" folder. This is shared folder that mounts to `/var/www/backend` directory in "data" container.
 This directory (and `/var/www/frontend` frontend directory) also shared with "app" and "nginx" containers.
 
 ### Step by step manual:
