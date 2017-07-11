@@ -1,4 +1,6 @@
 .idea
-backend
-frontend
+backend/*
+!backend/.gitkeep
+frontend/*
+!frontend/.gitkeep
 shared
